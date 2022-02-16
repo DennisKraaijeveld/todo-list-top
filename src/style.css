@@ -2,15 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply bg-gray-50 h-full;
+}
+
+body {
+  @apply h-full overflow-hidden;
+}
+
+.main {
+  @apply flex h-full;
+}
+
 .content-area {
   @apply flex-1 flex flex-col overflow-hidden;
 }
 
-.todo-grid {
+.todo-section {
   @apply flex-1 flex items-stretch overflow-hidden;
 }
 
-.todo-list {
+.todo-main {
   @apply flex-1 overflow-y-auto;
 }
 

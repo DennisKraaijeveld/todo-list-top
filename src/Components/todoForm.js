@@ -1,10 +1,8 @@
-import Project from './createProject';
+import Project from '../createProject';
 
 var todoPriorities = ['Low', 'Medium', 'High'];
 
-const TodoForm = () => {
-  const formDiv = document.getElementById('#form');
-
+export default function TodoForm() {
   const formWrapper = document.createElement('form');
 
   formWrapper.className = 'form-container';
@@ -113,7 +111,5 @@ const TodoForm = () => {
     submitTodoButton
   );
 
-  formDiv.appendChild(formWrapper);
-};
-
-export default TodoForm;
+  return formWrapper;
+}

@@ -1,10 +1,8 @@
 // import { removeTodoBtn } from './user-interface';
 
-const Card = (item) => {
-  console.log(item);
+export default function Card(item) {
   let { id, title, category, label } = item;
 
-  const todoList = document.getElementById('#list-items');
   const todoCard = document.createElement('div');
   todoCard.className = 'outer-card';
 
@@ -41,7 +39,7 @@ const Card = (item) => {
 
   todoCard.appendChild(todoContainer);
 
-  todoList.appendChild(todoCard);
-};
+  console.log(todoCard);
 
-export default Card;
+  return todoCard;
+}

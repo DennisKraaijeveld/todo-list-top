@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode=development --open",
+    "start": "webpack serve --open",
     "build": "export NODE_ENV=production && webpack"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.6",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.3.3",

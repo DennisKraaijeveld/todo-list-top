@@ -1,8 +1,7 @@
 // TODO: Should get populated by user created projects
 let menuItems = ['Projects', 'Work', '+ Add New'];
 
-const Sidebar = () => {
-  const mainDiv = document.getElementById('#content');
+export default function Sidebar() {
   const NavigationSidebar = document.createElement('div');
 
   const navWrapper = document.createElement('nav');
@@ -22,7 +21,5 @@ const Sidebar = () => {
   NavigationSidebar.appendChild(navWrapper);
   navWrapper.appendChild(navContainer);
 
-  mainDiv.appendChild(NavigationSidebar);
-};
-
-export default Sidebar;
+  return NavigationSidebar;
+}

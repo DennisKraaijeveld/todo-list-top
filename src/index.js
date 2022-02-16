@@ -1,60 +1,68 @@
-import './style.css';
-
-import Sidebar from './sidebar';
-import Header from './header';
-import CardList from './cardList';
-import TodoForm from './todoForm';
 import { format } from 'date-fns';
 
-Sidebar();
+import Sidebar from './Layout/sidebar';
+import Header from './Layout/header';
+import TodoForm from './Components/todoForm';
+import Project from './createProject';
+import Card from './Components/cardComponent';
 
-const mainDiv = document.getElementById('#content');
-const container = document.createElement('div');
-container.setAttribute('id', '#main-content');
-container.className = 'content-area';
+import './style.css';
 
-const todoGrid = document.createElement('div');
-todoGrid.setAttribute('id', '#todo-grid');
-todoGrid.className = 'todo-grid';
+function Index() {
+  const mainDiv = document.createElement('div');
+  mainDiv.className = 'main';
 
-const todoList = document.createElement('main');
-todoList.setAttribute('id', '#list');
-todoList.className = 'todo-list';
+  const contentArea = document.createElement('div');
+  contentArea.setAttribute('id', '#main-content');
+  contentArea.className = 'content-area';
 
-const primarySection = document.createElement('section');
-primarySection.setAttribute('id', '#primary');
-primarySection.className = 'primary-column';
+  const todoSection = document.createElement('div');
+  todoSection.className = 'todo-section';
 
-const todoListItems = document.createElement('ul');
-todoListItems.setAttribute('id', '#list-items');
-todoListItems.className = 'list-items';
+  const todoMain = document.createElement('main');
+  todoMain.className = 'todo-main';
 
-const todoFormSection = document.createElement('aside');
-todoFormSection.setAttribute('id', '#form');
-todoFormSection.className = 'todo-form-section';
+  const primarySection = document.createElement('section');
+  primarySection.className = 'primary-column';
 
-// TODO: Make separate component for the header of each list
-const headerContainer = document.createElement('div');
-const cardListHeader = document.createElement('h3');
-headerContainer.className = 'container';
-cardListHeader.textContent = 'Vandaag';
-cardListHeader.className = 'list-header';
-const currentDate = document.createElement('p');
-currentDate.className = 'date';
-let formatTime = format(new Date(), 'd MMMM');
-currentDate.textContent = formatTime;
+  // Todo list and form area
+  const todoListItems = document.createElement('ul');
+  todoListItems.className = 'list-items';
 
-mainDiv.appendChild(container);
+  const todoFormSection = document.createElement('aside');
+  todoFormSection.className = 'todo-form-section';
 
-Header();
+  todoFormSection.appendChild(TodoForm());
 
-headerContainer.append(cardListHeader, currentDate);
-primarySection.append(headerContainer, todoListItems);
+  // Map over todoArray and display them in their section
 
-todoGrid.append(todoList, todoFormSection);
-todoList.appendChild(primarySection);
+  Project.getTodos().map((item) => {
+    todoListItems.append(Card(item));
+  });
 
-container.appendChild(todoGrid);
+  // Section header. TODO: Need to move to own module
 
-CardList();
-TodoForm();
+  const headerContainer = document.createElement('div');
+  const cardListHeader = document.createElement('h3');
+  headerContainer.className = 'container';
+  cardListHeader.textContent = 'Vandaag';
+  cardListHeader.className = 'list-header';
+  const currentDate = document.createElement('p');
+  currentDate.className = 'date';
+  let formatTime = format(new Date(), 'd MMMM');
+  currentDate.textContent = formatTime;
+
+  headerContainer.append(cardListHeader, currentDate);
+  primarySection.append(headerContainer, todoListItems);
+
+  todoSection.append(todoMain, todoFormSection);
+  todoMain.append(primarySection);
+
+  contentArea.append(Header(), todoSection);
+
+  mainDiv.append(Sidebar(), contentArea);
+
+  return mainDiv;
+}
+
+document.body.appendChild(Index());

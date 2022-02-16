@@ -1,6 +1,4 @@
-const Header = () => {
-  const contentDiv = document.getElementById('#main-content');
-
+export default function Header() {
   const NavigationHeader = document.createElement('div'),
     navWrapper = document.createElement('nav'),
     navContainer = document.createElement('div'),
@@ -19,7 +17,5 @@ const Header = () => {
   navWrapper.appendChild(navContainer);
   navContainer.append(searchBar, navButtonSection);
 
-  contentDiv.appendChild(NavigationHeader);
-};
-
-export default Header;
+  return NavigationHeader;
+}
