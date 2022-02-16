@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content-area {
+  @apply flex-1 flex flex-col overflow-hidden;
+}
+
+.todo-grid {
+  @apply flex-1 flex items-stretch overflow-hidden;
+}
+
+.todo-list {
+  @apply flex-1 overflow-y-auto;
+}
+
+.list-items {
+  @apply divide-y divide-gray-200;
+}
+
+.sidebar {
+  @apply hidden w-28 bg-red-700 overflow-y-auto md:block;
+}
+
+.header {
+  @apply w-full;
+}
+
+.header-container {
+  @apply relative z-10 flex-shrink-0 h-16 bg-white border-b border-gray-200 shadow-sm flex;
+}
+
+.header-wrapper {
+  @apply flex-1 flex justify-between px-4 sm:px-6;
+}
+
+.navigation {
+  @apply w-full py-6 flex flex-col items-center;
+}
+
+.nav-container {
+  @apply flex-1 mt-6 w-full px-2 space-y-1;
+}
+
+.menu-item {
+  @apply text-red-100 hover:bg-red-800 hover:text-white w-full p-3 rounded-md flex flex-col items-center text-xs font-medium cursor-pointer;
+}
+
+.add-button {
+  @apply flex bg-red-600 px-3 py-1.5 rounded-full items-center justify-center text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 cursor-pointer;
+}
+
+.outer-card {
+  @apply col-span-1 w-3/4;
+}
+
+.todo-container {
+  @apply w-full flex items-center justify-between p-6 space-x-6;
+}
+
+.todo-title {
+  @apply text-slate-600;
+}
+
+.todo-category {
+  @apply text-sm text-gray-500;
+}
+
+.todo-top {
+  @apply flex justify-between w-full;
+}
+
+.todo-content {
+  @apply w-full;
+}
+
+.todo-circle {
+  @apply p-3 px-3 rounded-full;
+}
+
+.todo-label {
+  @apply flex space-x-2 font-semibold text-sm text-slate-700;
+}
+
+.label-text {
+  @apply self-end;
+}
+
+.search-bar {
+  @apply flex-1 flex;
+}
+
+.header-buttons {
+  @apply ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6;
+}
+
+.primary-column {
+  @apply min-w-0 flex-1 h-full flex flex-col lg:order-last px-4;
+}
+
+.todo-form-section {
+  @apply hidden w-96 bg-white border-l border-gray-200 overflow-y-auto lg:block;
+}
+
+.form-inputs {
+  @apply focus:ring-red-500 focus:border-red-500 flex-grow block w-full min-w-0 rounded-md sm:text-sm border-gray-300;
+}
+
+.form-labels {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.form-container {
+  @apply px-4 space-y-2 pt-10;
+}
+
+.submit-button {
+  @apply px-4 py-3 flex justify-center bg-red-700 text-white w-full rounded-lg;
+}
+
+.priority-form {
+  @apply grid grid-cols-3 gap-1;
+}
+
+.priority-button {
+  @apply border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none;
+}
+
+.screen-reader {
+  @apply sr-only;
+}
+
+.list-header {
+  @apply text-3xl;
+}
+
+.container {
+  @apply flex flex-col px-4 pt-6;
+}
+
+.date {
+  @apply text-sm text-slate-500;
+}
