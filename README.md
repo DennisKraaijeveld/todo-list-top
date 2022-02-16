@@ -1,21 +1,27 @@
-// Create the structure of the project
+# TOP To Do
 
-// User navigation. User lands on the homepage with all todo's. When user creates a new todo, they also have the ability to put this todo in a own category. This category should be added to the nav bar.
+## _The Last To Do App You Need, Ever_
 
-// Todo List Card component:
+## Features
 
-Title,
-Description,
-dueDate,
-Priority,
-Notes,
-Checklist,
-Category/Project
+- Create new to-do tasks and organize them
+- Crete your own projects
+- Edit and delete to-do's tasks
 
-Functions of the app:
+## Tech
 
-View all todos
-Create a new todo
-Expand todo
-Edit todo
-Delete todo
+- [Javascript] -Doh!
+- [TailwindCSS] - Utility-first CSS framework
+- [Webpack] - Bundle it!
+
+## Installation
+
+```sh
+cd todo-list-top
+npm i
+npm start
+```
+
+## License
+
+MIT
