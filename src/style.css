@@ -43,7 +43,7 @@ body {
 }
 
 .header-wrapper {
-  @apply flex-1 flex justify-between px-4 sm:px-6;
+  @apply px-4 sm:px-6 h-full;
 }
 
 .navigation {
@@ -62,8 +62,12 @@ body {
   @apply flex bg-red-600 px-3 py-1.5 rounded-full items-center justify-center text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 cursor-pointer;
 }
 
+.cards-list {
+  @apply space-y-10;
+}
+
 .outer-card {
-  @apply col-span-1 w-3/4;
+  @apply col-span-1 w-3/4 bg-slate-100 relative rounded-lg;
 }
 
 .todo-container {
@@ -75,7 +79,7 @@ body {
 }
 
 .todo-category {
-  @apply text-sm text-gray-500;
+  @apply text-sm text-gray-500 mb-4;
 }
 
 .todo-top {
@@ -99,11 +103,19 @@ body {
 }
 
 .search-bar {
-  @apply flex-1 flex;
+  @apply flex h-full;
+}
+
+.search-container {
+  @apply flex items-center;
 }
 
 .header-buttons {
-  @apply ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6;
+  @apply bg-slate-300 text-slate-700 ml-4 px-2 py-0.5 rounded-full text-sm cursor-pointer;
+}
+
+.button-active {
+  @apply bg-red-700 text-white ml-4 px-2 py-0.5 rounded-full text-sm cursor-pointer;
 }
 
 .primary-column {
@@ -127,7 +139,7 @@ body {
 }
 
 .submit-button {
-  @apply px-4 py-3 flex justify-center bg-red-700 text-white w-full rounded-lg;
+  @apply px-4 py-3 flex justify-center bg-red-700 hover:bg-red-800 text-white w-full rounded-lg transition-colors duration-300;
 }
 
 .priority-form {
@@ -152,4 +164,44 @@ body {
 
 .date {
   @apply text-sm text-slate-500;
+}
+
+.table-section {
+  @apply py-5 sm:grid sm:grid-cols-3 sm:gap-4;
+}
+
+.table-label {
+  @apply text-sm font-medium text-gray-500;
+}
+
+.table-content {
+  @apply mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2;
+}
+
+.expandable-hidden {
+  @apply border-t border-gray-200 mt-10 hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.expand-button {
+  @apply bg-red-700 hover:bg-red-800 transition-colors duration-300 text-white flex justify-center absolute bottom-0 left-0 right-0 rounded-b-lg py-1 cursor-pointer;
+}
+
+.no-task {
+  @apply px-4 text-xl py-4;
+}
+
+.remove-todo-btn {
+  @apply bg-slate-200 text-slate-400 p-2 rounded-lg font-semibold hover:bg-red-800 hover:text-white transition-colors duration-300 cursor-pointer;
+}
+
+.complete-wrapper {
+  @apply p-2 pb-12;
+}
+
+.complete-btn {
+  @apply text-slate-800 bg-slate-200 border px-2 py-1 rounded-full hover:text-slate-50 hover:bg-green-800 transition-colors duration-300 cursor-pointer;
 }

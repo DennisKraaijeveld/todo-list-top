@@ -4,7 +4,7 @@ var todoPriorities = ['Low', 'Medium', 'High'];
 
 export default function TodoForm() {
   const formWrapper = document.createElement('form');
-
+  formWrapper.setAttribute('id', '#mainForm');
   formWrapper.className = 'form-container';
 
   const titleInput = document.createElement('input'),
@@ -81,9 +81,6 @@ export default function TodoForm() {
     // TODO: get value from priority radiobuttons
     // const test = document.querySelector('input[name="priority"]');
     // console.log(test.checked);
-    if (titleInput.value === '') return;
-    if (descriptionLabel.value === '') return;
-    if (categoryLabel.value === '') return;
 
     Project.TodoNew({
       title: titleInput.value,
@@ -93,6 +90,14 @@ export default function TodoForm() {
       notes: notesInput.value,
       category: categoryInput.value,
     });
+
+    // Reset form
+    titleInput.value = null;
+    dueDateInput.value = null;
+    descriptionInput.value = null;
+    priorityInput.value = null;
+    notesInput.value = null;
+    categoryInput.value = null;
   });
 
   formWrapper.append(

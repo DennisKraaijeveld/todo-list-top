@@ -4,7 +4,6 @@ import Sidebar from './Layout/sidebar';
 import Header from './Layout/header';
 import TodoForm from './Components/todoForm';
 import Project from './createProject';
-import Card from './Components/cardComponent';
 
 import './style.css';
 
@@ -27,6 +26,7 @@ function Index() {
 
   // Todo list and form area
   const todoListItems = document.createElement('ul');
+  todoListItems.setAttribute('id', '#test');
   todoListItems.className = 'list-items';
 
   const todoFormSection = document.createElement('aside');
@@ -34,11 +34,7 @@ function Index() {
 
   todoFormSection.appendChild(TodoForm());
 
-  // Map over todoArray and display them in their section
-
-  Project.getTodos().map((item) => {
-    todoListItems.append(Card(item));
-  });
+  // // Map over todoArray and display them in their section
 
   // Section header. TODO: Need to move to own module
 
@@ -66,3 +62,5 @@ function Index() {
 }
 
 document.body.appendChild(Index());
+
+Project.getTodos();
